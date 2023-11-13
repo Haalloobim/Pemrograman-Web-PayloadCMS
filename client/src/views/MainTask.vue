@@ -1,88 +1,38 @@
 <template>
-    <div class="pt-10 flex flex-col items-center justify-center min-h-screen mb-8">
-        <h1 class="block mb-2 text-md font-medium text-gray-900">Data Anime</h1>
-        <div :id="'Result'" class="w-3/5"></div>
-        <button @click="load"
-            class="py-2 my-6 px-6 bg-slate-100 border border-black rounded-xl shadow-xl text-kuro font-inter text-sm font-semibold w-48 duration-75 ease-in-out hover:-translate-y-1"
-            type="submit" name="delete">
-            Show Data
-        </button>
-
-        <div class="flex flex-col items-center">
-            <h1 class="block mb-2 text-md font-medium text-gray-900">Add Data</h1>
-            <form id="tambahDataForm" class="bg-white p-4 rounded shadow-md">
-                <div class="mb-4">
-                    <label for="title" class="block text-gray-700 font-semibold">Anime Title:</label>
-                    <input v-model="title" type="text" id="title" name="title" required
-                        class="w-full border border-gray-300 p-2 rounded" />
-                </div>
-
-                <div class="mb-4">
-                    <label for="rate" class="block text-gray-700 font-semibold">Rate:</label>
-                    <input v-model="rate" type="number" id="rate" name="rate" step="0.1" required
-                        class="w-full border border-gray-300 p-2 rounded" />
-                </div>
-
-                <div class="mb-4">
-                    <label for="studio" class="block text-gray-700 font-semibold">Studio:</label>
-                    <input v-model="studio" type="text" id="studio" name="studio" required
-                        class="w-full border border-gray-300 p-2 rounded" />
-                </div>
-
-                <button @click="addData" class="bg-blue-500 text-white font-semibold py-2 px-4 rounded hover:bg-blue-600">
-                    Add Data
-                </button>
-            </form>
-        </div>
-
-        <div class="mt-3">
-            <div>
-                <form action="" id="ThisDeletedForm">
-                    <label for="animeID" class="block mb-2 text-sm font-medium text-gray-900">Delete Data by ID</label>
-                    <input v-model="animeID" type="text" id="animeID"
-                        class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500" />
-                    <button @click="deleteData"
-                        class="bg-red-500 text-white font-semibold mt-3  py-2 px-4 rounded hover:bg-red-600">
-                        Delete Data By Id
-                    </button>
-                </form>
+    <div class="container min-h-screen min-w-full bg-slate-50 flex items-center justify-center p-8">
+        <div class="min-h-fit flex flex-col gap-y-16">
+            <div class=" text-center items-center">
+                <h1 class="text-5xl font-bold">
+                    Action Selection
+                </h1>
+                <p class="text-success italic text-sm font-normal pt-2 hidden" id="text">
+                    Data has been changed ^^
+                </p>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+                <a href="create.php">
+                    <div class="container min-h-fit bg-white rounded-xl shadow-xl items-center justify-center text-center p-6 w-60 border-t-2 border-primary transition-all ease-in-out duration-100 hover:-translate-y-1">
+                        <p class="text-lg font-semibold ">CREATE DATA</p>
+                    </div>
+                </a>
+                <a href="view.php">
+                    <div class="container min-h-fit bg-white rounded-xl shadow-xl items-center justify-center text-center p-6 w-60 border-t-2 border-warning transition-all ease-in-out duration-100 hover:-translate-y-1">
+                        <p class="text-lg font-semibold ">VIEW DATA</p>
+                    </div>
+                </a>
+                <a href="update.php">
+                    <div class="container min-h-fit bg-white rounded-xl shadow-xl items-center justify-center text-center p-6 w-60 border-t-2 border-success transition-all ease-in-out duration-100 hover:-translate-y-1">
+                        <p class="text-lg font-semibold ">UPDATE DATA</p>
+                    </div>
+                </a>
+                <a href="delete.php">
+                    <div class="container min-h-fit bg-white rounded-xl shadow-xl items-center justify-center text-center p-6 w-60 border-t-2 border-danger transition-all ease-in-out duration-100 hover:-translate-y-1">
+                        <p class="text-lg font-semibold ">DELETE DATA</p>
+                    </div>
+                </a>
             </div>
         </div>
-
-        <div class="flex flex-col items-center mt-8">
-            <h1 class="block mb-2 text-md font-medium text-gray-900">Update Anime Data by ID</h1>
-            <form id="UpdateForm" class="bg-white p-4 rounded shadow-md">
-                <div class="mb-4">
-                    <label for="AnimeID" class="block text-gray-700 font-semibold">Anime ID Will Be Update:</label>
-                    <input v-model="AnimeIDUpdate" type="text" id="AnimeIDUpdate" name="AnimeID" required
-                        class="w-full border border-gray-300 p-2 rounded" />
-                </div>
-
-                <div class="mb-4">
-                    <label for="title" class="block text-gray-700 font-semibold">Anime Title:</label>
-                    <input v-model="titleUpdate" type="text" id="titleUpdate" name="title" required
-                        class="w-full border border-gray-300 p-2 rounded" />
-                </div>
-
-                <div class="mb-4">
-                    <label for="rate" class="block text-gray-700 font-semibold">Rate:</label>
-                    <input v-model="rateUpdate" type="number" id="rateUpdate" name="rate" step="0.1" required
-                        class="w-full border border-gray-300 p-2 rounded" />
-                </div>
-
-                <div class="mb-4">
-                    <label for="studio" class="block text-gray-700 font-semibold">Studio:</label>
-                    <input v-model="studioUpdate" type="text" id="studioUpdate" name="studio" required
-                        class="w-full border border-gray-300 p-2 rounded" />
-                </div>
-
-                <button @click="updateData"
-                    class="bg-green-500 text-white font-semibold py-2 px-4 rounded hover:bg-green-700">
-                    Update It!
-                </button>
-            </form>
-        </div>
-    </div>
+  </div>
 </template>
   
 <script>
