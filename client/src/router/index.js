@@ -3,7 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import LoginPage from '../views/LoginPage.vue'
 import MainTask from '../views/MainTask.vue' 
 import RegisterPage from '../views/RegisterPage.vue' 
-
+import createPage from '../views/createPage.vue' 
 
 const routes = [
   {
@@ -25,6 +25,11 @@ const routes = [
     path: '/main',
     name: 'main', 
     component: MainTask
+  },
+  {
+    path: '/create',
+    name: 'create', 
+    component: createPage
   }
 ]
 
