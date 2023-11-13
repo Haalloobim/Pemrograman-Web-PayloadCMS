@@ -45,9 +45,9 @@ export default {
         }
     },
     methods: {
-        async login(){
-            
-        }
+        // async login(){
+
+        // }
     }
 }
 </script>
