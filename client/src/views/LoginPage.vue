@@ -7,14 +7,14 @@
                     <form>
                         <div class="py-2 px-4 text-lg leading-6 space-y-4 text-gray-200">
                             <div class="relative">
-                                <input autocomplete="off" id="email" name="email" type="email"
+                                <input autocomplete="off" v-model="email" id="email"  type="email"
                                     class="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600"
-                                    placeholder="Username" />
+                                    placeholder="email" />
                                 <label for="email"
                                     class="cursor-pointer absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">Email</label>
                             </div>
                             <div class="relative">
-                                <input autocomplete="off" id="password" name="password" type="password"
+                                <input autocomplete="off" v-model="password" id="password" name="password" type="password"
                                     class="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600"
                                     placeholder="Password" />
                                 <label for="password"
@@ -37,6 +37,17 @@
 <script>    
 
 export default {
-    name: 'LoginPage'
+    name: 'LoginPage',
+    data () {
+        return {
+            email: "",
+            password: ""
+        }
+    },
+    methods: {
+        async login(){
+            
+        }
+    }
 }
 </script>
