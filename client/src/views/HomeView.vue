@@ -1,10 +1,10 @@
 <template>
   <div class="pt-10 flex flex-col items-center justify-center min-h-screen mb-8">
-    <div class="flex flex-col container w-[45%] bg-white rounded-lg shadow-xl pt-4 pb-4 gap-y-2">
+    <div class="flex flex-col container w-[40%] bg-white rounded-xl shadow-xl py-8 gap-y-4">
       <div id="Big" class="font-semibold text-xl font-inter">  
         Welcome to Payload CRUD Website.
       </div>
-      <div id="redirect" class="flex flex-col gap-2 justify-center items-center">  
+      <div id="redirect" class="flex flex-col gap-3 justify-center items-center">  
         <div class="font-medium text-lg ">
           <p>To get Started...</p>
         </div>
