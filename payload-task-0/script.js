@@ -17,7 +17,6 @@ createApp({
   methods: {
     async load() {
       try {
-        
         let response = await fetch(this.url);
         let data = await response.json();
         console.log(data);

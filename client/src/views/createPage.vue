@@ -59,7 +59,8 @@ export default {
                 console.log(data);
                 alert("Data Added Successfully");
                 this.resetForm("tambahDataForm");
-            } catch (error) {
+            } 
+            catch (error) {
                 console.error("Error adding data to the API:", error.message);
             }
         },

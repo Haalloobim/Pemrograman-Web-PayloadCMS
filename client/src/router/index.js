@@ -4,6 +4,7 @@ import LoginPage from '../views/LoginPage.vue'
 import MainTask from '../views/MainTask.vue' 
 import RegisterPage from '../views/RegisterPage.vue' 
 import createPage from '../views/createPage.vue' 
+import readPage from '../views/ReadPage.vue' 
 
 const routes = [
   {
@@ -30,6 +31,11 @@ const routes = [
     path: '/create',
     name: 'create', 
     component: createPage
+  },
+  {
+    path: '/read',
+    name: 'read', 
+    component: readPage
   }
 ]
 
