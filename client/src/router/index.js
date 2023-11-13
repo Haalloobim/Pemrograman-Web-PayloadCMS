@@ -5,6 +5,7 @@ import MainTask from '../views/MainTask.vue'
 import RegisterPage from '../views/RegisterPage.vue' 
 import createPage from '../views/createPage.vue' 
 import readPage from '../views/ReadPage.vue' 
+import updatePage from '../views/UpdatePage.vue' 
 
 const routes = [
   {
@@ -36,6 +37,11 @@ const routes = [
     path: '/read',
     name: 'read', 
     component: readPage
+  },
+  {
+    path: '/update',
+    name: 'update', 
+    component: updatePage
   }
 ]
 

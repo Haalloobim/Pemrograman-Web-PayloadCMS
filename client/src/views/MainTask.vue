@@ -20,7 +20,7 @@
                         <p class="text-lg font-semibold ">READ DATA</p>
                     </div>
                 </a>
-                <a href="update.php">
+                <a href="/update">
                     <div class="container min-h-fit bg-white rounded-xl shadow-xl items-center justify-center text-center p-6 w-60 border-t-2 border-success transition-all ease-in-out duration-100 hover:-translate-y-1">
                         <p class="text-lg font-semibold ">UPDATE DATA</p>
                     </div>
