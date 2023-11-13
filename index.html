@@ -21,7 +21,7 @@
     <button @click="load"
       class="py-2 my-6 px-6 bg-slate-100 border border-black rounded-xl shadow-xl text-kuro font-inter text-sm font-semibold w-48 duration-75 ease-in-out hover:-translate-y-1"
       type="submit" name="delete">
-      Tampilkan Data
+      Show Data
     </button>
 
     <div class="flex flex-col items-center">
@@ -47,7 +47,7 @@
 
         <button @click="addData"
           class="bg-blue-500 text-white font-semibold py-2 px-4 rounded hover:bg-blue-600">
-          Tambahkan Data
+          Add Data
         </button>
       </form>
     </div>
@@ -59,7 +59,7 @@
           <input v-model="animeID" type="text" id="animeID"
             class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500" />
           <button @click="deleteData"
-            class="bg-green-500 text-white font-semibold mt-3  py-2 px-4 rounded hover:bg-blue-600">
+            class="bg-red-500 text-white font-semibold mt-3  py-2 px-4 rounded hover:bg-red-600">
             Delete Data By Id
           </button>
         </form>
@@ -94,7 +94,7 @@
         </div>
 
         <button @click="updateData"
-          class="bg-blue-500 text-white font-semibold py-2 px-4 rounded hover:bg-blue-600">
+          class="bg-green-500 text-white font-semibold py-2 px-4 rounded hover:bg-green-700">
           Update It!
         </button>
       </form>
