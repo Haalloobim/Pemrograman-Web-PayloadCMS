@@ -6,6 +6,7 @@ import RegisterPage from '../views/RegisterPage.vue'
 import createPage from '../views/createPage.vue' 
 import readPage from '../views/ReadPage.vue' 
 import updatePage from '../views/UpdatePage.vue' 
+import deletePage from '../views/DeletePage.vue' 
 
 const routes = [
   {
@@ -42,6 +43,11 @@ const routes = [
     path: '/update',
     name: 'update', 
     component: updatePage
+  },
+  {
+    path: '/delete',
+    name: 'delete', 
+    component: deletePage
   }
 ]
 

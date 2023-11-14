@@ -8,27 +8,9 @@
                     <input v-model="AnimeIDDelete" type="text" id="AnimeIDDelete" name="AnimeID" required
                         class="w-full border border-gray-300 p-2 rounded" />
                 </div>
-
-                <div class="mb-4">
-                    <label for="title" class="block text-gray-700 font-semibold">Anime Title:</label>
-                    <input v-model="titleDelete" type="text" id="titleDelete" name="title" required
-                        class="w-full border border-gray-300 p-2 rounded" />
-                </div>
-
-                <div class="mb-4">
-                    <label for="rate" class="block text-gray-700 font-semibold">Rate:</label>
-                    <input v-model="rateDelete" type="number" id="rateDelete" name="rate" step="0.1" required
-                        class="w-full border border-gray-300 p-2 rounded" />
-                </div>
-
-                <div class="mb-4">
-                    <label for="studio" class="block text-gray-700 font-semibold">Studio:</label>
-                    <input v-model="studioDelete" type="text" id="studioDelete" name="studio" required
-                        class="w-full border border-gray-300 p-2 rounded" />
-                </div>
             </form>
             <button @click="DeleteDataByID"
-                class="bg-green-500 text-white font-semibold py-2 px-4 rounded hover:bg-green-700">
+                class="bg-red-500 text-white font-semibold py-2 px-4 rounded hover:bg-red-700">
                 Delete It!
             </button>
         </div>
@@ -40,27 +22,9 @@
                     <input v-model="TitleDelete" type="text" id="TitleDelete" name="Title" required
                         class="w-full border border-gray-300 p-2 rounded" />
                 </div>
-
-                <div class="mb-4">
-                    <label for="title" class="block text-gray-700 font-semibold">Anime Title:</label>
-                    <input v-model="titleByName" type="text" id="titleDelete" name="title" required
-                        class="w-full border border-gray-300 p-2 rounded" />
-                </div>
-
-                <div class="mb-4">
-                    <label for="rate" class="block text-gray-700 font-semibold">Rate:</label>
-                    <input v-model="rateByName" type="number" id="rateDelete" name="rate" step="0.1" required
-                        class="w-full border border-gray-300 p-2 rounded" />
-                </div>
-
-                <div class="mb-4">
-                    <label for="studio" class="block text-gray-700 font-semibold">Studio:</label>
-                    <input v-model="studioByName" type="text" id="studioDelete" name="studio" required
-                        class="w-full border border-gray-300 p-2 rounded" />
-                </div>
             </form>
             <button @click="DeleteDataByTitle"
-                class="bg-green-500 text-white font-semibold py-2 px-4 rounded hover:bg-green-700">
+                class="bg-red-500 text-white font-semibold py-2 px-4 rounded hover:bg-red-700">
                 Delete It!
             </button>
         </div>
@@ -70,7 +34,7 @@
 <script>
 import qs from "qs";
 export default {
-    name: 'readPage',
+    name: 'deletePage',
     data() {
         return {
             url: "http://localhost:13337/api/anime/",
@@ -92,15 +56,10 @@ export default {
             try {
                 const DeleteURL = `http://localhost:13337/api/anime/${this.AnimeIDDelete}`;
                 const response = await fetch(DeleteURL, {
-                    method: "PATCH",
+                    method: "DELETE",
                     headers: {
                         "Content-Type": "application/json",
                     },
-                    body: JSON.stringify({
-                        title: this.titleDelete,
-                        rate: parseFloat(this.rateDelete),
-                        studio: this.studioDelete,
-                    }),
                 });
                 const data = await response.json();
                 console.log(data);
@@ -126,11 +85,6 @@ export default {
                     headers: {
                         "Content-Type": "application/json",
                     },
-                    body: JSON.stringify({
-                        title: this.titleByName,
-                        rate: parseFloat(this.rateByName),
-                        studio: this.studioByName,
-                    }),
                 })
                 const data = await req.json()
                 console.log(data);
