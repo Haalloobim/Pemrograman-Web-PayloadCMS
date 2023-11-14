@@ -1,8 +1,8 @@
 <template>
     <div class="flex flex-row items-center justify-center min-h-screen gap-x-8">
-        <div class="flex flex-col items-center gap-y-2">
+        <div class="flex flex-col items-center p-8 gap-y-2 bg-white rounded-xl shadow-2xl">
             <h1 class="block mb-2 text-md font-medium text-gray-900">Update Anime Data by ID</h1>
-            <form ref="updateForm" class="bg-white p-4 rounded shadow-md">
+            <form ref="updateForm" class="">
                 <div class="mb-4">
                     <label for="AnimeID" class="block text-gray-700 font-semibold">Anime ID Will Be Update:</label>
                     <input v-model="AnimeIDUpdate" type="text" id="AnimeIDUpdate" name="AnimeID" required
@@ -32,9 +32,9 @@
                 Update It!
             </button>
         </div>
-        <div class="flex flex-col items-center gap-y-2">
+        <div class="flex flex-col items-center p-8 gap-y-2 bg-white rounded-xl shadow-2xl">
             <h1 class="block mb-2 text-md font-medium text-gray-900">Update Anime Data by Title</h1>
-            <form ref="updateForm" class="bg-white p-4 rounded shadow-md">
+            <form ref="updateForm" class="">
                 <div class="mb-4">
                     <label for="Title" class="block text-gray-700 font-semibold">Anime ID Will Be Update:</label>
                     <input v-model="TitleUpdate" type="text" id="TitleUpdate" name="Title" required

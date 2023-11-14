@@ -21,9 +21,9 @@
                                     class="cursor-pointer absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">Password</label>
                             </div>
                             <div class="relative">
-                                <button @click="confirm()"  
+                                <button  
                                     class="mt-2 inline-block rounded bg-[#3B71CA] px-6 pb-2 pt-2.5 text-sm tracking-wider font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]">
-                                    Submit
+                                    <a href="/main">SUBMIT</a>
                                 </button>
                             </div>
                         </div>
