@@ -1,8 +1,8 @@
 <template>
-    <div class="flex flex-row items-center justify-center min-h-screen gap-x-8">
-        <div class="flex flex-col items-center gap-y-2">
+    <div class="flex flex-row items-center justify-center min-h-screen gap-x-8 bg-slate-50">
+        <div class="flex flex-col items-center p-8 gap-y-2 bg-white rounded-xl shadow-2xl">
             <h1 class="block mb-2 text-md font-medium text-gray-900">Delete Anime Data by ID</h1>
-            <form ref="DeleteForm" class="bg-white p-4 rounded shadow-md">
+            <form ref="DeleteForm" class="p-4 rounded">
                 <div class="mb-4">
                     <label for="AnimeID" class="block text-gray-700 font-semibold">Anime ID Will Be Delete:</label>
                     <input v-model="AnimeIDDelete" type="text" id="AnimeIDDelete" name="AnimeID" required
@@ -14,9 +14,9 @@
                 Delete It!
             </button>
         </div>
-        <div class="flex flex-col items-center gap-y-2">
+        <div class="flex flex-col items-center p-8 gap-y-2 bg-white rounded-xl shadow-2xl">
             <h1 class="block mb-2 text-md font-medium text-gray-900">Delete Anime Data by Title</h1>
-            <form ref="DeleteForm" class="bg-white p-4 rounded shadow-md">
+            <form ref="DeleteForm" class=" p-4 rounded ">
                 <div class="mb-4">
                     <label for="Title" class="block text-gray-700 font-semibold">Anime ID Will Be Delete:</label>
                     <input v-model="TitleDelete" type="text" id="TitleDelete" name="Title" required

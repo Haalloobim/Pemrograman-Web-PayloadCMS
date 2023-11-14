@@ -7,6 +7,7 @@ import createPage from '../views/createPage.vue'
 import readPage from '../views/ReadPage.vue' 
 import updatePage from '../views/UpdatePage.vue' 
 import deletePage from '../views/DeletePage.vue' 
+import NotFound from '../views/NotFound.vue';
 
 const routes = [
   {
@@ -48,6 +49,11 @@ const routes = [
     path: '/delete',
     name: 'delete', 
     component: deletePage
+  }, 
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'Not Found',
+    component: NotFound
   }
 ]
 
