@@ -27,43 +27,45 @@
             </form>
         </div>
     </div>
+    <ReadTable></ReadTable>
 </template>
   
-<script>    
-
+<script>
+import ReadTable from '@/components/ReadTable.vue';
 export default {
-    name: 'CreatePage', 
-    data () {
-        return{
+    name: 'CreatePage',
+    data() {
+        return {
             url: "http://localhost:13337/api/anime/",
             title: "",
             rate: "",
             studio: "",
-        }
+        };
     },
     methods: {
         async addData() {
             try {
                 const response = await fetch(this.url, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                    title: this.title,
-                    rate: parseFloat(this.rate),
-                    studio: this.studio,
-                }),
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        title: this.title,
+                        rate: parseFloat(this.rate),
+                        studio: this.studio,
+                    }),
                 });
                 const data = await response.json();
                 console.log(data);
                 alert("Data Added Successfully");
                 this.resetForm("tambahDataForm");
-            } 
+            }
             catch (error) {
                 console.error("Error adding data to the API:", error.message);
             }
         },
-    }
+    },
+    components: { ReadTable }
 }
 </script>

@@ -29,9 +29,11 @@
             </button>
         </div>
     </div>
+    <ReadTable></ReadTable>
 </template>
 
 <script>
+import ReadTable from "@/components/ReadTable.vue";
 import qs from "qs";
 export default {
     name: 'deletePage',
@@ -39,12 +41,10 @@ export default {
         return {
             url: "http://localhost:13337/api/anime/",
             animeID: "",
-
             AnimeIDDelete: "",
             titleDelete: "",
             rateDelete: "",
             studioDelete: "",
-
             TitleDelete: "",
             titleByName: "",
             rateByName: "",
@@ -65,11 +65,11 @@ export default {
                 console.log(data);
                 alert("Data Deleted Successfully");
                 this.resetForm();
-            } catch (error) {
+            }
+            catch (error) {
                 console.error("Error updating data in the API:", error.message);
             }
         },
-
         async DeleteDataByTitle() {
             const stringifiedQuery = qs.stringify({
                 where: {
@@ -78,27 +78,27 @@ export default {
                     },
                 },
             }, { addQueryPrefix: true });
-
             try {
                 const req = await fetch(`http://localhost:13337/api/anime/${stringifiedQuery}`, {
                     method: "DELETE",
                     headers: {
                         "Content-Type": "application/json",
                     },
-                })
-                const data = await req.json()
+                });
+                const data = await req.json();
                 console.log(data);
                 alert("Data Deleted Successfully");
                 this.resetForm();
-            } catch (err) {
-                console.log(err)
+            }
+            catch (err) {
+                console.log(err);
             }
         },
-
         resetForm() {
             this.$refs.DeleteForm.reset();
         },
     },
+    components: { ReadTable }
 }
 
 </script>

@@ -65,9 +65,11 @@
             </button>
         </div>
     </div>
+    <ReadTable></ReadTable>
 </template>
 
 <script>
+import ReadTable from "@/components/ReadTable.vue";
 import qs from "qs";
 export default {
     name: 'readPage',
@@ -75,12 +77,10 @@ export default {
         return {
             url: "http://localhost:13337/api/anime/",
             animeID: "",
-
             AnimeIDUpdate: "",
             titleUpdate: "",
             rateUpdate: "",
             studioUpdate: "",
-
             TitleUpdate: "",
             titleByName: "",
             rateByName: "",
@@ -106,11 +106,11 @@ export default {
                 console.log(data);
                 alert("Data Updated Successfully");
                 this.resetForm();
-            } catch (error) {
+            }
+            catch (error) {
                 console.error("Error updating data in the API:", error.message);
             }
         },
-
         async updateDataByTitle() {
             const stringifiedQuery = qs.stringify({
                 where: {
@@ -119,7 +119,6 @@ export default {
                     },
                 },
             }, { addQueryPrefix: true });
-
             try {
                 const req = await fetch(`http://localhost:13337/api/anime/${stringifiedQuery}`, {
                     method: "PATCH",
@@ -131,20 +130,21 @@ export default {
                         rate: parseFloat(this.rateByName),
                         studio: this.studioByName,
                     }),
-                })
-                const data = await req.json()
+                });
+                const data = await req.json();
                 console.log(data);
                 alert("Data Updated Successfully");
                 this.resetForm();
-            } catch (err) {
-                console.log(err)
+            }
+            catch (err) {
+                console.log(err);
             }
         },
-
         resetForm() {
             this.$refs.updateForm.reset();
         },
     },
+    components: { ReadTable }
 }
 
 </script>
