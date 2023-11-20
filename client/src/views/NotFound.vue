@@ -2,7 +2,7 @@
     <div class="flex min-h-screen justify-center items-center m-auto flex-col">
       <h1>Not Found!</h1>
       <p>
-        <a href="/">Go home?</a>
+        <a href="/main">Go home?</a>
       </p>
     </div>
   </template>
