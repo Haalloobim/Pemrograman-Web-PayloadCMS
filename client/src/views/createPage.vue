@@ -32,7 +32,7 @@
 <script>    
 
 export default {
-    name: 'createPage', 
+    name: 'CreatePage', 
     data () {
         return{
             url: "http://localhost:13337/api/anime/",

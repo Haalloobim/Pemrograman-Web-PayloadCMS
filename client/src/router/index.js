@@ -3,7 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import LoginPage from '../views/LoginPage.vue'
 import MainTask from '../views/MainTask.vue' 
 import RegisterPage from '../views/RegisterPage.vue' 
-import createPage from '../views/createPage.vue' 
+import CreatePage from '../views/CreatePage.vue' 
 import readPage from '../views/ReadPage.vue' 
 import updatePage from '../views/UpdatePage.vue' 
 import deletePage from '../views/DeletePage.vue' 
@@ -33,7 +33,7 @@ const routes = [
   {
     path: '/create',
     name: 'create', 
-    component: createPage
+    component: CreatePage
   },
   {
     path: '/read',

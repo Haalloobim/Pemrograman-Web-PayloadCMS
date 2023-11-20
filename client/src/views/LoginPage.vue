@@ -4,7 +4,7 @@
             <div class="container h-full m-auto flex">
                 <div class="m-auto pt-12 pb-10 px-8 rounded-lg shadow-2xl bg-white">
                     <h1 class="text-4xl font-crimson pb-3 px-3 item">Login Page</h1>
-                    <form>
+                    <form >
                         <div class="py-2 px-4 text-lg leading-6 space-y-4 text-gray-200">
                             <div class="relative">
                                 <input autocomplete="off" v-model="email" id="email"  type="email"
