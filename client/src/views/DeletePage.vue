@@ -96,6 +96,7 @@ export default {
         },
         resetForm() {
             this.$refs.DeleteForm.reset();
+            window.location.reload();
         },
     },
     components: { ReadTable }

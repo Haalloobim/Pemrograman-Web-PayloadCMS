@@ -142,6 +142,7 @@ export default {
         },
         resetForm() {
             this.$refs.updateForm.reset();
+            window.location.reload();
         },
     },
     components: { ReadTable }
