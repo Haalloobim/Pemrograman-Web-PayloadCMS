@@ -15,7 +15,7 @@ module.exports = {
           roboto: ['roboto'],
           noto: ['Noto Serif']
       }
-  }
+    }
   },
   variants: {
     extend: {},
